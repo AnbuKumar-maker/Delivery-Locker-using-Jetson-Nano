@@ -1,0 +1,30 @@
+Delivery Locker using Jetson Nano
+
+Introduction
+Delivery locker is a well-known product, which is planted in the US has the capability of delivering the package to the right customer automatically by having face authentication. As a prototype of amazon locker, this locker is developed using Jetson Nano.
+Abstract
+In this project face authentication based locker is developed using Jetson Nano, which has good video processing frame rate than Raspberry Pi. In this project, you will learn to use Jetson Nano with Face recognition using computer vision and with the mechanical model used for Locker system.
+
+Short about Haar cascade algorithm
+It is the classifier with a machine learning approach trained by lots of positive (with face) and negative image (without a face). For even a 24x24 window it can result in more than 15000 features.  To select the best feature among 15000 feature, Adaboost is used. Instead of processing every image and applying every 15000 feature in every window of image which is very tedious and time-consuming, we are using cascade classifiers to detect the face first and applying every feature to only face area reduces time, then by eliminating the mismatching features, face recognition can be done for a face which the more feature is matched with a database.
+ 
+Existing system
+In the existing system, Raspberry Pi is used for these applications. It has less frame rate so the video processing is a little bit slow to recognize the face. 
+
+Proposed system
+In this proposed system Nvidia Jetson Nano is used which has GPU with high video processing frame rate. As same as Raspberry Pi Jetson Nano also has GPIO interface, so that smart locker is interfaced with the Jetson Nano. Locker model is designed using Acrylic material.
+
+Project description
+In this project, the USB camera is interfaced with the Jetson Nano. Face recognition is done using “haar cascade” algorithm, here “haarcascade_frontalface_default.xml” file is used as an algorithm. Before that database creation is done using simple OpenCV for multiple faces with their names as labels. Then for face recognition, we took feed from the USB camera and pass the image into the algorithm to detect the face and to recognize the face by its matching accuracy with database labels. After the face gets recognized, the appropriate locker will be opened to deliver the product.
+Hardware Required
+•	Nvidia Jetson Nano
+•	32GB SD card
+•	Acrylic design of locker
+•	USB Camera
+
+Software required
+•	OS for Nvidia nano
+•	SD card formatter
+•	Etcher
+Result
+By using Jetson Nano, the high frame rate is achieved so that video processing is faster than Raspberry Pi. A prototype of smart shopping locker is developed using the model with Nano.
